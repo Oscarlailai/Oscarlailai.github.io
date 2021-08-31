@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<head>
+
+<meta charset="utf-8">
+</title><link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/core.css" rel="stylesheet" />
+<link href="css/core.responsive.css" rel="stylesheet" />
+    <script src="script/jquery-1.11.0.min.js"></script>
+    <script src="script/html5shiv.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/core.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            resize();
+            $(window).on("resize", resize);
+
+            $(".mobile-navigation .handle").on("click", function () {
+                $(".mobile-navigation").toggleClass("active");
+            });
+            $(".mobile-navigation nav > ul > li > a").on("click", function () {
+                var obj = $(this);
+                if (!obj.attr("href")) {
+                    $(".mobile-navigation nav .sub").slideUp(function () {});
+                    
+                    obj.next(".sub").slideToggle(function () {
+                        $(".mobile-navigation .container").animate({ "scrollTop": obj.offset().top }, 500);
+                    });
+                    
+                    return false;
+                }
+            });
+
+            function resize() {
+                try {
+                    $(".two-col article").outerWidth($(".two-col .wrapper").width() - $("aside").outerWidth(true));
+                } catch (e) { }
+
+                $(".mobile-navigation .container").height($(window).height());
+            }
+        });
+
+    </script>
+    
+    <script src="script/jquery.cycle2.min.js"></script>
+    <script src="script/jquery.cycle2.carousel.min.js"></script>
+    <script src="script/index.js"></script>
+
+<title>一日生活介紹</title>
+
+<meta name ="author" content="賴奎元">
+
+</head>
+
+<body>
+<h1 align="center">一日生活介紹</h1>
+<br>
+<br>
+  <div class="box" align="center">
+		<img src ="images/6.png" width=15% alt="6.jpg">
+		<img src ="images/9.png" width=15% alt="9.jpg">
+		<img src ="images/7.png" width=15% alt="7.jpg">
+		<img src ="images/10.png" width=15% alt="10.jpg">
+		<img src ="images/8.png" width=15% alt="8.jpg">
+<br>
+</div>      
+<br>
+<br>
+<p align="center">風和日麗的早晨大約從10點開始，花費40分鐘到學校附近，喝一杯好咖啡，再去上課，沒課再回到咖啡廳打程式，這就是我的一天</p>
+
+
+    
+<hr>
+
+</body>
+
+<footer> 
+
+<h5>Copyright@2018 Oscar Lai</h5></footer>
+
+</html>
